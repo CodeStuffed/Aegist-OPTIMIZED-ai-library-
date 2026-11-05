@@ -1,0 +1,26 @@
+[package]
+name = "aegist"
+version = "0.1.0"
+edition = "2021"
+description = "Aegist: the Rust engine and launcher for .nx brains"
+license = "Apache-2.0"
+
+[[bin]]
+name = "aegist"
+path = "src/main.rs"
+
+[dependencies]
+base64 = "0.22"
+memmap2 = "0.9"
+regex = "1"
+serde_json = "1"
+sha2 = "0.10"
+tokenizers = { version = "0.22", default-features = false, features = ["fancy-regex"] }
+unicode-general-category = "1.0"
+unicode-normalization = "0.1"
+unicode-script = "0.5"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
